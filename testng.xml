@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="Util.TestListener" />
+    </listeners>
+    <test name="Resgression">
+        <groups>
+            <run>
+                <include name="Resgression1" />
+                <include name="Resgression2" />
+            </run>
+        </groups>
+        <classes>
+            <class name="MainTestPage" />
+        </classes>
+    </test>
+</suite>
