@@ -4,17 +4,17 @@ import io.qameta.allure.Step;
 
 public class fiveMethodStep {
     SwoopLocators swoop=new SwoopLocators();
-    @Step
+    @Step("შესვლაზე დაკლიკება")
     public fiveMethodStep firstStep(){
         swoop.shesvla.click();
         return this;
     }
-    @Step
+    @Step("რეგისტრაციაზე დაკლიკება")
     public  fiveMethodStep secondStep(){
         swoop.registracia.click();
         return this;
     }
-    @Step
+    @Step("რეგისტრაციაში ელემენტების ჩაწერა")
     public fiveMethodStep thirdStep(String firstname,String lastname,String phone,String email,String dateOfBirth,String password){
 
         swoop.saxeli.setValue(firstname);
@@ -27,7 +27,7 @@ public class fiveMethodStep {
 
         return this;
     }
-    @Step
+    @Step("დათანხმება და რეგისტრაციის დაკლიკება")
     public fiveMethodStep fourStep(){
         swoop.vetanxmebi1.click();
         swoop.registracionButt.click();

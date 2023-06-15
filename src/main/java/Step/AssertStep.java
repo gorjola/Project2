@@ -10,7 +10,7 @@ public class AssertStep {
     SwoopLocators swoop = new SwoopLocators();
     SoftAssert asert = new SoftAssert();
 
-    @Step
+    @Step("ფასების შემოწმება ფილტრში")
     public void firstMethodAssert() {
 
         for (SelenideElement x : swoop.hotelList) {
@@ -27,30 +27,30 @@ public class AssertStep {
         }
         asert.assertAll();
     }
-    @Step
+    @Step("ლოგინის გრაფის შემოწმება")
     public void secondMethodAssert(){
         swoop.login.shouldBe(Condition.visible);
         swoop.login.isDisplayed();
     }
-    @Step
+    @Step("ვაუჩერების შემოწმება ამოყიდულია თუ არა ბოლომდე")
     public void secondMethodAssert2(){
         double width=Double.parseDouble(swoop.vaucherDiagramList.get(0).getAttribute("data-width").replaceAll("[^0-9.]",""));
         Assert.assertTrue(width<100);
         System.out.println(swoop.sellCountList.get(0).getText());
     }
-    @Step
+    @Step("შემოწმება მომდევნო ელემენტის ფასი თუ კლებულობს")
     public void thirdMethodAssert(){
         double firstPriceValue = Double.parseDouble(swoop.sushipriceList.get(0).getText().replaceAll("[^0-9.]", ""));
         double secondPriceValue = Double.parseDouble(swoop.sushipriceList.get(1).getText().replaceAll("[^0-9.]", ""));
         Assert.assertTrue(firstPriceValue>secondPriceValue);
 
     }
-    @Step
+    @Step("ფაცებუქის ფანჯრის შემოწმება")
     public void fourMethodAssert(){
         swoop.facebook.shouldBe(Condition.visible);
         swoop.facebook.isDisplayed();
     }
-    @Step
+    @Step("ერორ მესიჯის შემოწმება")
     public void fiveMethodAssert(){
         swoop.SqesisErrorMess.shouldBe(Condition.visible);
         swoop.SqesisErrorMess.isDisplayed();

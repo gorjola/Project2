@@ -8,12 +8,12 @@ import static com.codeborne.selenide.Selenide.actions;
 
 public class thirdMethodStep {
     SwoopLocators swoop=new SwoopLocators();
-    @Step
+    @Step("კატეგორიაზე დაქლიქება")
     public thirdMethodStep firstStep(){
         swoop.category.click();
         return this;
     }
-    @Step
+    @Step("კვებასთან მაუსის მიტანა")
     public thirdMethodStep secondStep(){
         for (SelenideElement x:swoop.CategoryList){
             if (x.getText().contains("კვება")){
@@ -24,17 +24,17 @@ public class thirdMethodStep {
         }
         return this;
     }
-    @Step
+    @Step("სუშიზე დაქლიქება")
     public thirdMethodStep thirdStep(){
         swoop.sushi.click();
         return this;
     }
-    @Step
+    @Step("სორტირებაზე დაქლიქება")
     public thirdMethodStep fourStep(){
         swoop.sort.click();
         return this;
     }
-    @Step
+    @Step("სორტირების არჩევა ზემოდან ქვემოთ")
     public thirdMethodStep fivestep(){
         swoop.sortpick.click();
         return this;

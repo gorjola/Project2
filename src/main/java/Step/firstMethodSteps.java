@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 public class firstMethodSteps {
     SwoopLocators swoop =new SwoopLocators();
 
-    @Step()
+    @Step("დასვენებაზე დაკლიკება")
     public firstMethodSteps firstStep(){
         for (SelenideElement x:swoop.categoryList){
             if (x.getText().contains("დასვენება")){
@@ -17,7 +17,7 @@ public class firstMethodSteps {
         }
         return this;
     }
-    @Step
+    @Step("ფილტრის შევსება")
     public firstMethodSteps secondStep(){
         swoop.minPrice.setValue("200");
         swoop.maxPrice.setValue("230");
